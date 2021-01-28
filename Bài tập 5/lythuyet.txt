@@ -3,4 +3,45 @@ Cú pháp khai báo biến gồm: <kiểu dữ liệu> <danh sách biến>;
 Ví Dụ: int n; (int là kiểu dữ liệu, n là danh sách biến>;
 b) - Biến toàn cục là các biến được khai báo ở bên ngoài tất cả các hàm. Biến toàn cục có thể truy xuất và sử dụng ở mọi hàm trong chương trình. Biến toàn cục tồn tại cho tới khi chương trình kết thúc.
    - Biến cục bộ các biến được khai báo trong 1 khối code . Các biến cục bộ này chỉ tồn tại và chỉ có thể sử dụng bên trong khối code đó trong khi khối code đó đang thực thi.
-   Ví dụ for (int i = 0; i < n; i++) thì i chính là biến cục bộ 
+   Ví dụ: for (int i = 0; i < n; i++) thì i chính là biến cục bộ 
+c) Hàm là một đoạn chương trình bao gồm một hoặc nhiều xử lý nhằm giải quyết một công việc nào đó và được xây dựng với mục đích sử dụng lại. Sử dụng lại bằng cách gọi lại hàm đó.
+   - Có 2 loại hàm cở bản: là hàm void và hàm int
+      + Int là hàm có giá trị trả về phù hợp cho các đoạn code cần sự tính toán
+      + Void là hàm không có giá trị trả về phù hợp cho các đoạn code không có sự tính toán.
+      
+* Bài tập 1:
+ #include <stdio.h>
+
+int x = 1, y = 2; 
+
+void ham_a(int x);
+void ham_b();
+
+
+int main(void) {
+  int x = 3;
+  printf("%d", x)
+  // Vì x trong main = 3 nên sẽ hiển thị ra màn hình là 3
+  printf("%d", y);
+  // Vì y không nằm trong bất cứ hàm nào nên có thể sử dụng khi kết thúc chương trình. Còn được gọi là biến toàn cục nên y = 2 thì y trong main cũng là 2. Hiển thị 2 ra màn hình ham_a(x);
+  // Gọi lại hàm ham_a nên = 5 vì biến x trong ham_a = 5 và có lệnh printf nên hiển thị 5 ra màn hình
+  ham_b();
+  // Gọi lại hàm ham_b nên = 2 vì chỉ có lệnh printf gọi lại biến y mà biến y không nằm trong hàm ham_b thì sẽ dùng y của biến toàn cục. y của biến toàn cục là 2
+  return 0;
+}
+
+void ham_a(int x){
+  x = 5;
+  printf("%d", x);
+}
+
+void ham_b(){
+   printf("%d", y);
+}
+
+chương trình sẽ hiển thị ra kết quả là 3252. Phần giải thích ở trên.
+
+
+
+
+
