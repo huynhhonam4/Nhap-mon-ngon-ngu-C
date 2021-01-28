@@ -42,6 +42,3 @@ void ham_b(){
 chương trình sẽ hiển thị ra kết quả là 3252. Phần giải thích ở trên.
 
 
-
-
-
